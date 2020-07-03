@@ -24,6 +24,11 @@ const routes = [{
         path: "/review/:id",
         component: Review,
         name: "review"
+    },
+    {
+        path: "/basket",
+        component: Basket,
+        name: "basket"
     }
 ]
 
