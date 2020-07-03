@@ -2,8 +2,68 @@
     <div>
         <div class="row">
             <div class="col-md-8">
-                Checkout form
-            </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="first_name">First name</label>
+                        <input type="text" class="form-control" name="first_name">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="last_name">Last name</label>
+                        <input type="text" class="form-control" name="last_name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" name="email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="street">Street</label>
+                        <input type="text" class="form-control" name="street">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" name="city">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="country">Country</label>
+                        <select class="custom-select d-block w-100" name="country">
+                        <option value="">Choose...</option>
+                        <option>United States</option>
+                        </select>
+                        <div class="invalid-feedback">
+                        Please select a valid country.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="state">State</label>
+                        <select class="custom-select d-block w-100" name="state">
+                        <option value="">Choose...</option>
+                        <option>California</option>
+                        </select>
+                        <div class="invalid-feedback">
+                        Please provide a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="zip">Zip</label>
+                        <input type="text" class="form-control" name="zip" placeholder="3315" required="">
+                        <div class="invalid-feedback">
+                        Zip code required.
+                        </div>
+                    </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Book Now!</button>
+                        </div>
+                    </div>
+                </div>
             <div class="col-md-4">
                 <div class="d-flex justify-content-between">
                     <h6 class="text-uppercase text-secondary font-weight-bolder">Your cart</h6>
