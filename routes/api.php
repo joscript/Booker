@@ -35,4 +35,4 @@ Route::get('booking-by-review/{review_key}', 'API\BookingReviewController')
 
 Route::apiResource('reviews', 'API\ReviewController')->only(['show', 'store']);
 
-
+Route::post('checkout', 'API\CheckoutController')->name('checkout');

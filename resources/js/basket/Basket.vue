@@ -5,33 +5,33 @@
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <label for="first_name">First name</label>
-                        <input type="text" class="form-control" name="first_name">
+                        <input type="text" class="form-control" v-model="customer.first_name" name="first_name">
                     </div>
                     <div class="col-md-6 form-group">
                         <label for="last_name">Last name</label>
-                        <input type="text" class="form-control" name="last_name">
+                        <input type="text" class="form-control" v-model="customer.last_name" name="last_name">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email">
+                        <input type="text" class="form-control" v-model="customer.email" name="email">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <label for="street">Street</label>
-                        <input type="text" class="form-control" name="street">
+                        <input type="text" class="form-control" v-model="customer.street" name="street">
                     </div>
                     <div class="col-md-6 form-group">
                         <label for="city">City</label>
-                        <input type="text" class="form-control" name="city">
+                        <input type="text" class="form-control" v-model="customer.city" name="city">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-5 mb-3">
                         <label for="country">Country</label>
-                        <select class="custom-select d-block w-100" name="country">
+                        <select class="custom-select d-block w-100" v-model="customer.country" name="country">
                         <option value="">Choose...</option>
                         <option>United States</option>
                         </select>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="state">State</label>
-                        <select class="custom-select d-block w-100" name="state">
+                        <select class="custom-select d-block w-100" v-model="customer.state" name="state">
                         <option value="">Choose...</option>
                         <option>California</option>
                         </select>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="zip">Zip</label>
-                        <input type="text" class="form-control" name="zip" placeholder="3315" required="">
+                        <input type="text" class="form-control" v-model="customer.zip" name="zip" placeholder="3315" required="">
                         <div class="invalid-feedback">
                         Zip code required.
                         </div>
@@ -87,7 +87,7 @@
                             </span>
                             <span>
                                 <small> To {{item.dates.to}} </small>
-                            </span>
+                            </span> 
                         </div>
                         <div class="py-1 text-right">
                             <button class="btn btn-sm btn-outline-secondary" @click="$store.dispatch('removeFromBasket', item.bookable.id)">
@@ -107,6 +107,20 @@
 import { mapState, mapGetters } from "vuex";
 
 export default {
+    data(){
+        return {
+            customer: {
+                first_name: null,
+                last_name: null,
+                email: null,
+                street: null,
+                city: null,
+                country: null,
+                state: null,
+                zip: null
+            }
+        }
+    },
     computed: {
         ...mapGetters(["itemsInBasket"]),
         ...mapState({

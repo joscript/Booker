@@ -18,6 +18,10 @@ class Booking extends Model
         return $this->hasOne(Review::class);
     }
 
+    public function address(){
+        return $this->belongsTo(Address::class);
+    }
+
     public function scopeBetweenDates(Builder $query, $from, $to) // query scope
     {
         return $query->where('to', '>=', $from) // checking the availability
