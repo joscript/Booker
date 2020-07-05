@@ -28,6 +28,7 @@ class CheckOutController extends Controller
             'customer.zip'   =>  'required|min:2',
         ]);
 
+        // validation in array
         $data = array_merge($data, $request->validate([
             'bookings.*'    =>  ['required', function ($attribute, $value, $fail) {
                 $bookable = Bookable::findOrFail($value['bookable_id']);
