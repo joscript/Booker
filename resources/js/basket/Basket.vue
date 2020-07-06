@@ -1,6 +1,9 @@
 <template>
     <div>
-        <div class="row">
+        <success v-if="success">
+            Congratulations on your purchase!
+        </success>
+        <div v-else class="row">
             <div class="col-md-8" v-if="itemsInBasket">
                 <div class="row">
                     <div class="col-md-6 form-group">
@@ -137,7 +140,8 @@ export default {
                 state: null,
                 zip: null
             },
-            loading: false
+            loading: false,
+            bookingAttempted: false
         }
     },
     methods: {
@@ -160,13 +164,17 @@ export default {
             }
 
             this.loading = false;
+            this.bookingAttempted = true;
         }
     },
     computed: {
         ...mapGetters(["itemsInBasket"]),
         ...mapState({
             basket: state => state.basket.items
-        })
+        }),
+        success(){
+            return !this.loading && 0 === this.itemsInBasket && this.bookingAttempted; // false
+        }
     }
 }
 </script>
