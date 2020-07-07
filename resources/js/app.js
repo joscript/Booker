@@ -16,6 +16,7 @@ import ButtonLoad from "./shared/components/ButtonLoad";
 
 // helpers
 import storeDefinition from "./store";
+import Axios from "axios";
 
 // globals
 window.Vue = require('vue');
@@ -44,7 +45,15 @@ const app = new Vue({
     components: {
         Index
     },
-    beforeCreate() {
+    async beforeCreate() {
         this.$store.dispatch("loadStoredState"); // calling the loadStoredState action to make a data mutation and set the lastSearch object datas from the local storage
+
+        // await axios.get('/sanctum/csrf-cookie');
+        // await axios.post('/login', {
+        //     email: "josua.lagat@gmail.com",
+        //     password: "password"
+        // });
+
+        // await axios.get('/user');
     }
 });
