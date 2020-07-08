@@ -47,7 +47,7 @@ const app = new Vue({
     },
     async beforeCreate() {
         this.$store.dispatch("loadStoredState"); // calling the loadStoredState action to make a data mutation and set the lastSearch object datas from the local storage
-
+        this.$store.dispatch("loadUser");
         // await axios.get('/sanctum/csrf-cookie');
         // await axios.post('/login', {
         //     email: "josua.lagat@gmail.com",

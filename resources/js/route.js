@@ -4,6 +4,7 @@ import Bookable from "./bookable/Bookable";
 import Example2 from "./components/Example2";
 import Review from "./review/Review";
 import Basket from "./basket/Basket";
+import Login from "./auth/Login";
 
 const routes = [{
         path: "/",
@@ -29,6 +30,11 @@ const routes = [{
         path: "/basket",
         component: Basket,
         name: "basket"
+    },
+    {
+        path: "/auth/login",
+        component: Login,
+        name: "login"
     }
 ]
 
