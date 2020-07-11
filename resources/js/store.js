@@ -2,6 +2,7 @@ import {
     isLoggedIn,
     logout
 } from "./shared/utils/auth";
+
 export default {
     state: {
         lastSearch: {
@@ -75,7 +76,7 @@ export default {
                 }
             }
         },
-        logout() {
+        logout({ commit }) {
             commit('setUser', {});
             commit('setLoggedIn', false);
             logout();
